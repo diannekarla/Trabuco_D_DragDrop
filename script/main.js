@@ -16,10 +16,12 @@
 	// <img src="images/buttonTwo.jpg" data-bgref="2" alt="thumbnail">
 	// <img src="images/buttonThree.jpg" data-bgref="3" alt="thumbnail">
 	// ]
-		// function reset
+		function resetPuzzlePieces(){
+
+		}
 
 		function changeImageSet() {
-			debugger;//pause our code for execution at this point
+			// debugger;//pause our code for execution at this point
 			// let key = this.dataset.bgref;s
 			// console.log(key);
 
@@ -46,7 +48,6 @@
 			// and script our own
 			// that's what event.preventDefault() does -> override the default behaviour (block it)
 
-			//console.log(event.dataTransfer.getData("draggedElement"));
 			let boardTarget = event.target;
 			let currentEl = event.dataTransfer.getData("draggedElement");
 
@@ -58,8 +59,7 @@
 				}
 			}
 			event.preventDefault();
-			//add on correct place only
-			// console.log("dragged me over");
+
 		}
 
 		function handleDrop(event){
