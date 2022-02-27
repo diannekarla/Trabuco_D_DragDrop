@@ -1,10 +1,13 @@
 (() => {
 	// make the  connections to the elements on the page
 	// that we want the user to interact with
-	const theButtons = document.querySelectorAll("#buttonHolder img"),
+	let theButtons = document.querySelectorAll("#buttonHolder img"),
 				puzzlePieces = document.querySelectorAll(".puzzle-pieces *"),
 				dropZones = document.querySelectorAll(".drop-zone"),
 				theGameBoard = document.querySelector(".puzzle-board");
+
+	const piecePaths = ["topLeft", "topRight", "bottomLeft", "bottomRight"];
+
 
 	// thebuttons becomes this:
 	// [
@@ -14,9 +17,9 @@
 	// <img src="images/buttonThree.jpg" data-bgref="3" alt="thumbnail">
 	// ]
 
-		function changeBgImg() {
-			// debugger;//pause our code for execution at this point
-			// let key = this.dataset.bgref;
+		function changeImageSet() {
+			debugger;//pause our code for execution at this point
+			// let key = this.dataset.bgref;s
 			// console.log(key);
 
 			// theGameBoard.style.backgroundImage = `url(images/backGround${key}.jpg)`;
@@ -24,6 +27,10 @@
 			// `` means this is a javascript template string. You can use it to write a bit of
 			// inline javascript which will be interpreted at runtime
 			// search for MDN Javascript Template String
+
+				piecePaths.forEach((piece, index) => {
+					puzzlePieces[index].src = `images/${piece + this.dataset.bgref}.jpg`
+				})
 		}
 
 		function startDrag(event){
@@ -37,6 +44,14 @@
 			// some elements have default behaviour (like an anchor tag) -> we need to block the behaviour
 			// and script our own
 			// that's what event.preventDefault() does -> override the default behaviour (block it)
+
+			//console.log(event.dataTransfer.getData("draggedElement"));
+			// const currentPuzzleBoard = document.getElementsByClassName(event.target.className);
+			let boardTarget = event.target;
+			if(boardTarget.tagName == 'IMG'){ //on top of image already
+					return;
+			}
+
 			event.preventDefault();
 			// console.log("dragged me over");
 		}
@@ -46,16 +61,19 @@
 			// console.log("dropped on me");
 			let currentEl = event.dataTransfer.getData("draggedElement");
 			console.log(`dropped this element:` , currentEl);
+
 			this.appendChild(document.querySelector(`#${currentEl}`));
 		}
 
 		// these are the "triggers" we want to use to fire off events
-		theButtons.forEach(button => button.addEventListener("click", changeBgImg));
+		theButtons.forEach(button => button.addEventListener("click", changeImageSet));
 
 		puzzlePieces.forEach(piece => piece.addEventListener("dragstart", startDrag));
 		dropZones.forEach(zone => {
 			zone.addEventListener("dragover", draggedOver);
+
 			zone.addEventListener("drop", handleDrop);
+
 		});
 
 })();
