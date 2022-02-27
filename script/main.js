@@ -18,22 +18,38 @@
 	// ]
 		function resetPuzzlePieces(){
 
+			const puzzleHolder = document.getElementsByClassName("puzzle-pieces");
+			dropZone = document.getElementsByClassName('drop-zone');
+
+			for (let i = 0; i < 4; i++) {
+				currentDropZone = dropZone[i];
+
+				if(currentDropZone.children.length > 0){
+						puzzleHolder[0].appendChild(currentDropZone.children[0]);
+						// dropZone[i].removeChild(dropZone[i].children[0]); //or remove
+				}
+
+			}
+
 		}
 
 		function changeImageSet() {
 			// debugger;//pause our code for execution at this point
 			// let key = this.dataset.bgref;s
-			// console.log(key);
+
 
 			// theGameBoard.style.backgroundImage = `url(images/backGround${key}.jpg)`;
-				theGameBoard.style.backgroundImage = `url(images/backGround${this.dataset.bgref}.jpg)`;
+			theGameBoard.style.backgroundImage = `url(images/backGround${this.dataset.bgref}.jpg)`;
+
 			// `` means this is a javascript template string. You can use it to write a bit of
 			// inline javascript which will be interpreted at runtime
 			// search for MDN Javascript Template String
 
-				piecePaths.forEach((piece, index) => {
-					puzzlePieces[index].src = `images/${piece + this.dataset.bgref}.jpg`
-				})
+			piecePaths.forEach((piece, index) => {
+				puzzlePieces[index].src = `images/${piece + this.dataset.bgref}.jpg`
+			})
+
+			resetPuzzlePieces();
 		}
 
 		function startDrag(event){
