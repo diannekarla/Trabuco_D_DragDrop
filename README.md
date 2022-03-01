@@ -3,6 +3,8 @@ The user must drag and drop the puzzle pieces to their proper location. When the
 
 ![drag and drop puzzle game](images/UI.png "drag and drop puzzle game")
 
+Written Plan: https://docs.google.com/document/d/1aW-SsLslCBe5mwJfHzwNAzxLHFvI_X53gjEuF1s1wsk/edit?usp=sharing
+
 
 ## Requirements
 It should fix the following bugs using a newly created branch for each bug:
