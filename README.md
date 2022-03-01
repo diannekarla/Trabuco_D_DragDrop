@@ -1,5 +1,6 @@
 # Troubleshooting Crushing Bugs
 The user must drag and drop the puzzle pieces to their proper location. When the spot already has a piece, the piece should not be dropped.
+
 ![drag and drop puzzle game](images/UI.png "drag and drop puzzle game")
 
 
