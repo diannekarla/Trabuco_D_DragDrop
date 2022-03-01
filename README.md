@@ -5,10 +5,10 @@ The user must drag and drop the puzzle pieces to their proper location. When the
 
 
 ## Requirements
-Using a newly-created branch for each bug, it should fix the following bugs:
+It should fix the following bugs using a newly created branch for each bug:
 
-* The piece should only be dropped to it proper location
-* When the background or puzzle board are changed, the dropped pieces should return to their puzzle piece location.
+* The piece should only be dropped to it's proper location
+* When the background or puzzle board are changed, the dropped pieces should return to their puzzle piece location
 
 
 ## Contributing
@@ -21,10 +21,12 @@ Using a newly-created branch for each bug, it should fix the following bugs:
 
 ## Credits
 
+* Prof Trev
+
+Links:
 * https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children
 * https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return
 
 ## License
-
 Dianne Karla Trabuco
