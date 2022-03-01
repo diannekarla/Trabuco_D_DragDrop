@@ -26,9 +26,9 @@ It should fix the following bugs using a newly created branch for each bug:
 * Prof Trev
 
 Links:
-* [Element.children] (https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children)
-* [Node.removeChild()] (https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
-* [return] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)
+* [Element.children](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children)
+* [Node.removeChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
+* [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)
 
 ## License
 Dianne Karla Trabuco
